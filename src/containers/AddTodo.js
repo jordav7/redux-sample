@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import { addTodo } from '../sample/actions'
 
 export default class AddTodo extends Component {
@@ -12,7 +13,7 @@ export default class AddTodo extends Component {
         if (!this.input.value.trim()) {
             return
         }
-        store.dispatch();
+        //dispatch(addTodo(this.input.value));
     }
     render() {
         return (
