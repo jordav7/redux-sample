@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './sample/index'
+//import './sample/index'
 import Footer from './components/Footer'
 import AddTodo from './containers/AddTodo'
 import VisibleTodoList from './containers/VisibleTodoList'

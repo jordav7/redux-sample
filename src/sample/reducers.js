@@ -15,22 +15,23 @@ function visibilityFilter(state = SHOW_ALL, action) {
 function todos(state = [], action) {
     switch (action.type) {
         case ADD_TODO:
+            console.log('Ingresa a todo::'+ action.id + action.text);
             return [
                 ...state, 
                 {
+                    id: action.id,
                     text: action.text,
                     complete: false
                 }
             ]
         case COMPLETE_TODO:
-            return state.map((todo, index) => {
-                if (index === action.index) {
-                    return Object.assign({}, todo, {
-                        complete: true
-                    })
-                }
-                return todo
-            })
+            console.log('Ingresa a elige ::' + action.id);
+            return state.map(todo => 
+                (todo.id === action.id) ? 
+                     {...todo, complete: !todo.complete}
+                     : todo             
+                
+                )
         default:
             return state;
     }

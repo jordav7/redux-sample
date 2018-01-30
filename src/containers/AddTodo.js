@@ -3,14 +3,14 @@ import { connect } from 'react-redux'
 
 import { addTodo } from '../sample/actions'
 
-export default class AddTodo extends Component {
+class AddTodo extends Component {
 
     constructor() {
         super();
-        this.execute.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    execute(e) {
+    handleSubmit(e) {
         e.preventDefault();
         const { dispatch } = this.props;
         if (!this.input.value.trim()) {
@@ -22,11 +22,12 @@ export default class AddTodo extends Component {
     render() {
         return (
         <div>
-            <form onSubmit={this.execute}>
+            <form onSubmit={this.handleSubmit}>
                 <input ref={(node) => {this.input = node}} />
+                <button type="submit">Añadir tarea</button>
             </form>
         </div>
         )
     }
 }
-connect()(AddTodo)
+export default connect()(AddTodo)

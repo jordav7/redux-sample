@@ -7,12 +7,24 @@ export default class Link extends Component {
         children: PropTypes.node.isRequired,
         onClick: PropTypes.func.isRequired
     }
+
+    constructor() {
+        super();
+        this.executeOnClick = this.executeOnClick.bind(this);
+    }
+
+    executeOnClick(e) {
+        e.preventDefault();
+        this.props.onClick();
+    }
+
     render() {
         if (this.props.active) {
             return <span>{this.props.children}</span>
         }
         return (
-            <a href="#" onClick={e => {e.preventDefault();this.props.onClick}}>
+            // eslint-disable-next-line
+            <a href="#" onClick={this.executeOnClick}>
                 {this.props.children}
             </a>
         )

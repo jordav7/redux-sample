@@ -5,14 +5,14 @@ export default class Todo extends Component {
 
     static propTypes = {
         onClick: PropTypes.func.isRequired,
-        completed: PropTypes.bool.isRequired,
+        complete: PropTypes.bool.isRequired,
         text: PropTypes.string.isRequired
     }
 
     render() {
         return (
-        <li onClick={this.props.onClick} style={{ 'text-decoration': this.props.completed ? 'line-through' : 'none'}}>
-            {this.props.text}
+        <li onClick={this.props.onClick} style={{ textDecoration: this.props.complete ? 'line-through' : 'none'}}>
+            {this.props.text}-{""+this.props.complete}
         </li>
         )
     }
