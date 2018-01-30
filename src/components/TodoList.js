@@ -16,7 +16,7 @@ export default class TodoList extends Component {
     return (
         <ul>
             {this.props.todos.map(todo => 
-                <Todo key={todo.id} {...todo} onClick={() => this.props.onTodoClick}/>)}
+                <Todo key={todo.id} {...todo} onClick={this.props.onTodoClick}/>)}
         </ul>
     )
   }
