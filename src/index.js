@@ -6,7 +6,7 @@ import todoApp from './sample/reducers'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
-let store = createStore(todoApp);
+let store = createStore(todoApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
 <Provider store={store}>
