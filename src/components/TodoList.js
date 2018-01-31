@@ -10,7 +10,7 @@ export default class TodoList extends Component {
             complete: PropTypes.bool.isRequired,
             text: PropTypes.string.isRequired
           }).isRequired).isRequired,
-          onTodoClick: PropTypes.func.isRequired
+        onTodoClick: PropTypes.func.isRequired
     }  
 
     todoClick(id) {

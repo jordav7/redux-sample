@@ -12,7 +12,7 @@ export default class Todo extends Component {
     render() {
         return (
         <li onClick={this.props.onClick} style={{ textDecoration: this.props.complete ? 'line-through' : 'none'}}>
-            {this.props.text}-{""+this.props.complete}
+            {this.props.text}
         </li>
         )
     }

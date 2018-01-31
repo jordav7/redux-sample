@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import FilterLink from '../containers/FilterLink'
 
 export default class Footer extends Component {
-
-  static propTypes = {
-      filter: PropTypes.string
-  }
 
   render() {
     return (
